@@ -44,6 +44,167 @@
 #define ID_BTN_REFRESH      113
 
 typedef struct {
+    const wchar_t* windowTitle;
+    const wchar_t* lblExe;
+    const wchar_t* btnBrowse;
+    const wchar_t* lblList;
+    const wchar_t* colSessionName;
+    const wchar_t* colAccountEmail;
+    const wchar_t* colTokenMode;
+    const wchar_t* colShortcut;
+    const wchar_t* colFolder;
+    const wchar_t* btnLaunch;
+    const wchar_t* btnNew;
+    const wchar_t* btnDelete;
+    const wchar_t* btnRefresh;
+    const wchar_t* grpConfig;
+    const wchar_t* lblSessionName;
+    const wchar_t* lblEmail;
+    const wchar_t* chkIsolated;
+    const wchar_t* chkSkipWizard;
+    const wchar_t* chkShortcut;
+    const wchar_t* btnSave;
+    const wchar_t* notLoggedIn;
+    const wchar_t* modeIsolated;
+    const wchar_t* modePrincipal;
+    const wchar_t* shortcutYes;
+    const wchar_t* shortcutNo;
+    const wchar_t* defaultProfileName;
+    const wchar_t* newAccountDefault;
+    const wchar_t* fallbackSlug;
+    const wchar_t* statusReady;
+    const wchar_t* statusDetectedFmt;
+    const wchar_t* statusCreatingNew;
+    const wchar_t* msgNameRequired;
+    const wchar_t* titleNameRequired;
+    const wchar_t* shortcutDescFmt;
+    const wchar_t* shortcutDescFallback;
+    const wchar_t* msgSavedFmt;
+    const wchar_t* titleSaved;
+    const wchar_t* msgSelectToLaunch;
+    const wchar_t* titleLaunch;
+    const wchar_t* msgExeNotFound;
+    const wchar_t* titleError;
+    const wchar_t* statusLaunchingFmt;
+    const wchar_t* msgLaunchFailed;
+    const wchar_t* msgCannotDeleteMain;
+    const wchar_t* titleNotAllowed;
+    const wchar_t* msgConfirmDeleteFmt;
+    const wchar_t* titleConfirmDelete;
+    const wchar_t* statusDeleted;
+    const wchar_t* browseTitle;
+    const wchar_t* browseFilter;
+} UiStrings;
+
+static const UiStrings STRINGS_ES = {
+    L"AntigravityMA - Gestor Multi-Cuenta y Perfiles",
+    L"Ejecutable de Antigravity:",
+    L"Examinar...",
+    L"Sesiones / Perfiles de Antigravity en este equipo:",
+    L"Nombre de Sesión",
+    L"Cuenta (Email)",
+    L"Modo de Token",
+    L"Acceso Directo",
+    L"Carpeta (AppData)",
+    L"▶ Iniciar Sesión Seleccionada",
+    L"+ Nueva Sesión",
+    L"Eliminar Sesión",
+    L"Recargar Lista",
+    L"Configurar Sesión Seleccionada / Nueva",
+    L"Nombre de la Sesión:",
+    L"Correo / Cuenta:",
+    L"Aislar token fuera del Administrador de Credenciales de Windows (SSH_CONNECTION=1)",
+    L"Omitir asistente de instalación del IDE al abrir (ide-install-wizard-shown)",
+    L"Crear / actualizar acceso directo en el Escritorio (Antigravity - <Nombre>.lnk)",
+    L"Guardar Configuración",
+    L"(Sin iniciar sesión)",
+    L"Token Aislado (Archivo)",
+    L"Credencial Windows (Principal)",
+    L"Sí (Escritorio)",
+    L"No",
+    L"Principal",
+    L"NuevaCuenta",
+    L"Perfil",
+    L"Listo.",
+    L"Listo. Se detectaron %d sesiones configuradas en este equipo.",
+    L"Creando nueva sesión: escribe el nombre y correo opcional, y pulsa 'Guardar Configuración'.",
+    L"Por favor ingresa un nombre para la sesión.",
+    L"Nombre requerido",
+    L"Antigravity - Sesión %s (%s)",
+    L"Perfil independiente",
+    L"Sesión '%s' guardada correctamente.",
+    L"Configuración Guardada",
+    L"Selecciona una sesión de la lista para iniciarla.",
+    L"Iniciar Sesión",
+    L"No se encontró Antigravity.exe en la ruta indicada.",
+    L"Error",
+    L"Iniciando Antigravity con la sesión '%s'...",
+    L"No se pudo iniciar el proceso de Antigravity.",
+    L"La carpeta principal de Antigravity no puede eliminarse por seguridad.",
+    L"Acción no permitida",
+    L"¿Estás seguro de eliminar la sesión '%s'?\n\nCarpeta: %s\n(Tus proyectos de .gemini no se borrarán).",
+    L"Confirmar eliminación",
+    L"Sesión eliminada correctamente.",
+    L"Seleccionar Antigravity.exe",
+    L"Ejecutable de Antigravity (Antigravity.exe)\0Antigravity.exe\0Todos los ejecutables (*.exe)\0*.exe\0"
+};
+
+static const UiStrings STRINGS_EN = {
+    L"AntigravityMA - Multi-Account & Profile Manager",
+    L"Antigravity Executable:",
+    L"Browse...",
+    L"Antigravity Sessions / Profiles on this PC:",
+    L"Session Name",
+    L"Account (Email)",
+    L"Token Mode",
+    L"Shortcut",
+    L"Folder (AppData)",
+    L"▶ Launch Selected Session",
+    L"+ New Session",
+    L"Delete Session",
+    L"Refresh List",
+    L"Configure Selected / New Session",
+    L"Session Name:",
+    L"Email / Account:",
+    L"Isolate token outside Windows Credential Manager (SSH_CONNECTION=1)",
+    L"Skip IDE installation wizard on startup (ide-install-wizard-shown)",
+    L"Create / update Desktop shortcut (Antigravity - <Name>.lnk)",
+    L"Save Configuration",
+    L"(Not signed in)",
+    L"Isolated Token (File)",
+    L"Windows Credential (Main)",
+    L"Yes (Desktop)",
+    L"No",
+    L"Main",
+    L"NewAccount",
+    L"Profile",
+    L"Ready.",
+    L"Ready. Detected %d configured sessions on this PC.",
+    L"Creating new session: enter a name and optional email, then click 'Save Configuration'.",
+    L"Please enter a name for the session.",
+    L"Name Required",
+    L"Antigravity - Session %s (%s)",
+    L"Independent profile",
+    L"Session '%s' saved successfully.",
+    L"Configuration Saved",
+    L"Select a session from the list to launch it.",
+    L"Launch Session",
+    L"Antigravity.exe was not found at the specified path.",
+    L"Error",
+    L"Launching Antigravity with session '%s'...",
+    L"Could not start the Antigravity process.",
+    L"The main Antigravity folder cannot be deleted for safety.",
+    L"Action Not Allowed",
+    L"Are you sure you want to delete session '%s'?\n\nFolder: %s\n(Your .gemini projects will not be deleted).",
+    L"Confirm Deletion",
+    L"Session deleted successfully.",
+    L"Select Antigravity.exe",
+    L"Antigravity Executable (Antigravity.exe)\0Antigravity.exe\0All Executables (*.exe)\0*.exe\0"
+};
+
+static const UiStrings* S = &STRINGS_EN;
+
+typedef struct {
     wchar_t displayName[128];
     wchar_t folderName[128];
     wchar_t folderPath[MAX_PATH];
@@ -75,6 +236,32 @@ static HWND g_hBtnSave, g_hBtnNew, g_hBtnLaunch, g_hBtnDelete, g_hBtnRefresh;
 static HWND g_hStatus;
 static HFONT g_hFontUI = NULL;
 static HFONT g_hFontBold = NULL;
+
+// Detects if Windows UI language is Spanish (Spain es-ES or Mexico es-MX).
+// Any other language defaults to English.
+static void DetectUiLanguage(LPWSTR lpCmdLine) {
+    if (lpCmdLine) {
+        if (wcsstr(lpCmdLine, L"--lang=es") != NULL) {
+            S = &STRINGS_ES;
+            return;
+        }
+        if (wcsstr(lpCmdLine, L"--lang=en") != NULL) {
+            S = &STRINGS_EN;
+            return;
+        }
+    }
+
+    LANGID langId = GetUserDefaultUILanguage();
+    WORD primary = PRIMARYLANGID(langId);
+    WORD sub = SUBLANGID(langId);
+
+    if (primary == LANG_SPANISH &&
+        (sub == SUBLANG_SPANISH || sub == SUBLANG_SPANISH_MODERN || sub == SUBLANG_SPANISH_MEXICAN)) {
+        S = &STRINGS_ES;
+    } else {
+        S = &STRINGS_EN;
+    }
+}
 
 static void SetStatusText(const wchar_t* msg) {
     if (g_hStatus) SetWindowTextW(g_hStatus, msg);
@@ -435,7 +622,7 @@ static void LoadProfileFromDir(const wchar_t* folderName, bool isDefault) {
                 wchar_t* at = wcschr(p->displayName, L'@');
                 if (at) *at = L'\0';
             } else {
-                wcscpy_s(p->displayName, 128, L"Principal");
+                wcscpy_s(p->displayName, 128, S->defaultProfileName);
             }
         } else {
             if (_wcsnicmp(folderName, L"Antigravity-", 12) == 0) {
@@ -482,9 +669,9 @@ static void RefreshProfileList(void) {
         lvi.pszText = g_profiles[i].displayName;
         ListView_InsertItem(g_hList, &lvi);
 
-        ListView_SetItemText(g_hList, i, 1, g_profiles[i].email[0] ? g_profiles[i].email : L"(Sin iniciar sesión)");
-        ListView_SetItemText(g_hList, i, 2, g_profiles[i].isIsolated ? L"Token Aislado (Archivo)" : L"Credencial Windows (Principal)");
-        ListView_SetItemText(g_hList, i, 3, g_profiles[i].hasDesktopShortcut ? L"Sí (Escritorio)" : L"No");
+        ListView_SetItemText(g_hList, i, 1, (LPWSTR)(g_profiles[i].email[0] ? g_profiles[i].email : S->notLoggedIn));
+        ListView_SetItemText(g_hList, i, 2, (LPWSTR)(g_profiles[i].isIsolated ? S->modeIsolated : S->modePrincipal));
+        ListView_SetItemText(g_hList, i, 3, (LPWSTR)(g_profiles[i].hasDesktopShortcut ? S->shortcutYes : S->shortcutNo));
         ListView_SetItemText(g_hList, i, 4, g_profiles[i].folderName);
     }
 
@@ -492,7 +679,7 @@ static void RefreshProfileList(void) {
         ListView_SetItemState(g_hList, 0, LVIS_SELECTED | LVIS_FOCUSED, LVIS_SELECTED | LVIS_FOCUSED);
     }
     wchar_t msg[256];
-    swprintf(msg, 256, L"Listo. Se detectaron %d sesiones configuradas en este equipo.", g_profileCount);
+    swprintf(msg, 256, S->statusDetectedFmt, g_profileCount);
     SetStatusText(msg);
 }
 
@@ -526,7 +713,7 @@ static void PrepareNewProfileForm(void) {
     g_isCreatingNew = true;
     g_selectedIndex = -1;
     ListView_SetItemState(g_hList, -1, 0, LVIS_SELECTED | LVIS_FOCUSED);
-    SetWindowTextW(g_hEditName, L"NuevaCuenta");
+    SetWindowTextW(g_hEditName, S->newAccountDefault);
     SetWindowTextW(g_hEditEmail, L"");
     SendMessageW(g_hChkIsolated, BM_SETCHECK, BST_CHECKED, 0);
     SendMessageW(g_hChkSkipWizard, BM_SETCHECK, BST_CHECKED, 0);
@@ -535,7 +722,7 @@ static void PrepareNewProfileForm(void) {
     EnableWindow(g_hBtnDelete, FALSE);
     SetFocus(g_hEditName);
     SendMessageW(g_hEditName, EM_SETSEL, 0, -1);
-    SetStatusText(L"Creando nueva sesión: escribe el nombre y correo opcional, y pulsa 'Guardar Configuración'.");
+    SetStatusText(S->statusCreatingNew);
 }
 
 static void SanitizeFolderName(const wchar_t* input, wchar_t* output, size_t maxLen) {
@@ -550,7 +737,7 @@ static void SanitizeFolderName(const wchar_t* input, wchar_t* output, size_t max
         }
     }
     output[j] = L'\0';
-    if (j == 0) wcscpy_s(output, maxLen, L"Perfil");
+    if (j == 0) wcscpy_s(output, maxLen, S->fallbackSlug);
 }
 
 static void SaveCurrentProfile(void) {
@@ -561,7 +748,7 @@ static void SaveCurrentProfile(void) {
     GetWindowTextW(g_hEditEmail, email, 128);
 
     if (wcslen(name) == 0) {
-        MessageBoxW(g_hWndMain, L"Por favor ingresa un nombre para la sesión.", L"Nombre requerido", MB_ICONWARNING);
+        MessageBoxW(g_hWndMain, S->msgNameRequired, S->titleNameRequired, MB_ICONWARNING);
         return;
     }
 
@@ -608,7 +795,7 @@ static void SaveCurrentProfile(void) {
         PathRemoveFileSpecW(exeDir);
 
         wchar_t desc[256];
-        swprintf(desc, 256, L"Antigravity - Sesión %s (%s)", prof.displayName, prof.email[0] ? prof.email : L"Perfil independiente");
+        swprintf(desc, 256, S->shortcutDescFmt, prof.displayName, prof.email[0] ? prof.email : S->shortcutDescFallback);
 
         if (prof.isIsolated) {
             wchar_t vbsArg[MAX_PATH];
@@ -632,20 +819,20 @@ static void SaveCurrentProfile(void) {
     }
 
     wchar_t msg[256];
-    swprintf(msg, 256, L"Sesión '%s' guardada correctamente.", prof.displayName);
+    swprintf(msg, 256, S->msgSavedFmt, prof.displayName);
     SetStatusText(msg);
-    MessageBoxW(g_hWndMain, msg, L"Configuración Guardada", MB_ICONINFORMATION);
+    MessageBoxW(g_hWndMain, msg, S->titleSaved, MB_ICONINFORMATION);
 }
 
 static void LaunchSelectedProfile(void) {
     if (g_selectedIndex < 0 || g_selectedIndex >= g_profileCount) {
-        MessageBoxW(g_hWndMain, L"Selecciona una sesión de la lista para iniciarla.", L"Iniciar Sesión", MB_ICONWARNING);
+        MessageBoxW(g_hWndMain, S->msgSelectToLaunch, S->titleLaunch, MB_ICONWARNING);
         return;
     }
 
     GetWindowTextW(g_hEditExe, g_antigravityExe, MAX_PATH);
     if (!PathFileExistsW(g_antigravityExe)) {
-        MessageBoxW(g_hWndMain, L"No se encontró Antigravity.exe en la ruta indicada.", L"Error", MB_ICONERROR);
+        MessageBoxW(g_hWndMain, S->msgExeNotFound, S->titleError, MB_ICONERROR);
         return;
     }
 
@@ -671,10 +858,10 @@ static void LaunchSelectedProfile(void) {
         CloseHandle(pi.hProcess);
         CloseHandle(pi.hThread);
         wchar_t msg[256];
-        swprintf(msg, 256, L"Iniciando Antigravity con la sesión '%s'...", p->displayName);
+        swprintf(msg, 256, S->statusLaunchingFmt, p->displayName);
         SetStatusText(msg);
     } else {
-        MessageBoxW(g_hWndMain, L"No se pudo iniciar el proceso de Antigravity.", L"Error", MB_ICONERROR);
+        MessageBoxW(g_hWndMain, S->msgLaunchFailed, S->titleError, MB_ICONERROR);
     }
 }
 
@@ -682,16 +869,14 @@ static void DeleteSelectedProfile(void) {
     if (g_selectedIndex < 0 || g_selectedIndex >= g_profileCount) return;
     ProfileEntry* p = &g_profiles[g_selectedIndex];
     if (p->isDefaultFolder) {
-        MessageBoxW(g_hWndMain, L"La carpeta principal de Antigravity no puede eliminarse por seguridad.", L"Acción no permitida", MB_ICONWARNING);
+        MessageBoxW(g_hWndMain, S->msgCannotDeleteMain, S->titleNotAllowed, MB_ICONWARNING);
         return;
     }
 
     wchar_t confirmMsg[512];
-    swprintf(confirmMsg, 512,
-        L"¿Estás seguro de eliminar la sesión '%s'?\n\nCarpeta: %s\n(Tus proyectos de .gemini no se borrarán).",
-        p->displayName, p->folderPath);
+    swprintf(confirmMsg, 512, S->msgConfirmDeleteFmt, p->displayName, p->folderPath);
 
-    if (MessageBoxW(g_hWndMain, confirmMsg, L"Confirmar eliminación", MB_YESNO | MB_ICONQUESTION) != IDYES) {
+    if (MessageBoxW(g_hWndMain, confirmMsg, S->titleConfirmDelete, MB_YESNO | MB_ICONQUESTION) != IDYES) {
         return;
     }
 
@@ -711,7 +896,7 @@ static void DeleteSelectedProfile(void) {
     SHFileOperationW(&fileOp);
 
     RefreshProfileList();
-    SetStatusText(L"Sesión eliminada correctamente.");
+    SetStatusText(S->statusDeleted);
 }
 
 static void BrowseForAntigravityExe(void) {
@@ -720,11 +905,11 @@ static void BrowseForAntigravityExe(void) {
 
     OPENFILENAMEW ofn = { sizeof(ofn) };
     ofn.hwndOwner = g_hWndMain;
-    ofn.lpstrFilter = L"Antigravity Executable (Antigravity.exe)\0Antigravity.exe\0Todos los ejecutables (*.exe)\0*.exe\0";
+    ofn.lpstrFilter = S->browseFilter;
     ofn.lpstrFile = file;
     ofn.nMaxFile = MAX_PATH;
     ofn.Flags = OFN_FILEMUSTEXIST | OFN_PATHMUSTEXIST;
-    ofn.lpstrTitle = L"Seleccionar Antigravity.exe";
+    ofn.lpstrTitle = S->browseTitle;
 
     if (GetOpenFileNameW(&ofn)) {
         wcscpy_s(g_antigravityExe, MAX_PATH, file);
@@ -750,17 +935,17 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
             DEFAULT_PITCH | FF_SWISS, L"Segoe UI");
 
         // Top section: Antigravity.exe path
-        CreateWindowW(L"STATIC", L"Ejecutable de Antigravity:", WS_CHILD | WS_VISIBLE,
+        CreateWindowW(L"STATIC", S->lblExe, WS_CHILD | WS_VISIBLE,
             16, 16, 170, 22, hWnd, NULL, NULL, NULL);
         g_hEditExe = CreateWindowExW(WS_EX_CLIENTEDGE, L"EDIT", g_antigravityExe,
             WS_CHILD | WS_VISIBLE | ES_AUTOHSCROLL,
             185, 13, 470, 25, hWnd, (HMENU)ID_EDIT_EXE, NULL, NULL);
-        g_hBtnBrowse = CreateWindowW(L"BUTTON", L"Examinar...", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+        g_hBtnBrowse = CreateWindowW(L"BUTTON", S->btnBrowse, WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
             665, 12, 95, 27, hWnd, (HMENU)ID_BTN_BROWSE_EXE, NULL, NULL);
 
         // Profiles ListView
-        HWND hLblList = CreateWindowW(L"STATIC", L"Sesiones / Perfiles de Antigravity en este equipo:", WS_CHILD | WS_VISIBLE,
-            16, 50, 400, 20, hWnd, NULL, NULL, NULL);
+        HWND hLblList = CreateWindowW(L"STATIC", S->lblList, WS_CHILD | WS_VISIBLE,
+            16, 50, 450, 20, hWnd, NULL, NULL, NULL);
 
         g_hList = CreateWindowExW(WS_EX_CLIENTEDGE, WC_LISTVIEWW, L"",
             WS_CHILD | WS_VISIBLE | LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS,
@@ -769,57 +954,57 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPara
 
         LVCOLUMNW col = {0};
         col.mask = LVCF_TEXT | LVCF_WIDTH;
-        col.pszText = L"Nombre de Sesión"; col.cx = 145; ListView_InsertColumn(g_hList, 0, &col);
-        col.pszText = L"Cuenta (Email)"; col.cx = 195; ListView_InsertColumn(g_hList, 1, &col);
-        col.pszText = L"Modo de Token"; col.cx = 175; ListView_InsertColumn(g_hList, 2, &col);
-        col.pszText = L"Acceso Directo"; col.cx = 100; ListView_InsertColumn(g_hList, 3, &col);
-        col.pszText = L"Carpeta (AppData)"; col.cx = 120; ListView_InsertColumn(g_hList, 4, &col);
+        col.pszText = (LPWSTR)S->colSessionName; col.cx = 145; ListView_InsertColumn(g_hList, 0, &col);
+        col.pszText = (LPWSTR)S->colAccountEmail; col.cx = 195; ListView_InsertColumn(g_hList, 1, &col);
+        col.pszText = (LPWSTR)S->colTokenMode; col.cx = 175; ListView_InsertColumn(g_hList, 2, &col);
+        col.pszText = (LPWSTR)S->colShortcut; col.cx = 100; ListView_InsertColumn(g_hList, 3, &col);
+        col.pszText = (LPWSTR)S->colFolder; col.cx = 120; ListView_InsertColumn(g_hList, 4, &col);
 
         // Quick action bar below list
-        g_hBtnLaunch = CreateWindowW(L"BUTTON", L"▶ Iniciar Sesión Seleccionada", WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON,
+        g_hBtnLaunch = CreateWindowW(L"BUTTON", S->btnLaunch, WS_CHILD | WS_VISIBLE | BS_DEFPUSHBUTTON,
             16, 258, 215, 32, hWnd, (HMENU)ID_BTN_LAUNCH, NULL, NULL);
-        g_hBtnNew = CreateWindowW(L"BUTTON", L"+ Nueva Sesión", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+        g_hBtnNew = CreateWindowW(L"BUTTON", S->btnNew, WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
             242, 258, 140, 32, hWnd, (HMENU)ID_BTN_NEW, NULL, NULL);
-        g_hBtnDelete = CreateWindowW(L"BUTTON", L"Eliminar Sesión", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+        g_hBtnDelete = CreateWindowW(L"BUTTON", S->btnDelete, WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
             392, 258, 140, 32, hWnd, (HMENU)ID_BTN_DELETE, NULL, NULL);
-        g_hBtnRefresh = CreateWindowW(L"BUTTON", L"Recargar Lista", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+        g_hBtnRefresh = CreateWindowW(L"BUTTON", S->btnRefresh, WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
             630, 258, 130, 32, hWnd, (HMENU)ID_BTN_REFRESH, NULL, NULL);
 
         // GroupBox for editing / configuring profile
-        CreateWindowW(L"BUTTON", L"Configurar Sesión Seleccionada / Nueva", WS_CHILD | WS_VISIBLE | BS_GROUPBOX,
+        CreateWindowW(L"BUTTON", S->grpConfig, WS_CHILD | WS_VISIBLE | BS_GROUPBOX,
             16, 302, 744, 175, hWnd, NULL, NULL, NULL);
 
-        CreateWindowW(L"STATIC", L"Nombre de la Sesión:", WS_CHILD | WS_VISIBLE,
+        CreateWindowW(L"STATIC", S->lblSessionName, WS_CHILD | WS_VISIBLE,
             34, 332, 145, 22, hWnd, NULL, NULL, NULL);
         g_hEditName = CreateWindowExW(WS_EX_CLIENTEDGE, L"EDIT", L"",
             WS_CHILD | WS_VISIBLE | ES_AUTOHSCROLL,
             185, 329, 230, 25, hWnd, (HMENU)ID_EDIT_NAME, NULL, NULL);
 
-        CreateWindowW(L"STATIC", L"Correo / Cuenta:", WS_CHILD | WS_VISIBLE,
+        CreateWindowW(L"STATIC", S->lblEmail, WS_CHILD | WS_VISIBLE,
             435, 332, 110, 22, hWnd, NULL, NULL, NULL);
         g_hEditEmail = CreateWindowExW(WS_EX_CLIENTEDGE, L"EDIT", L"",
             WS_CHILD | WS_VISIBLE | ES_AUTOHSCROLL,
             545, 329, 195, 25, hWnd, (HMENU)ID_EDIT_EMAIL, NULL, NULL);
 
         g_hChkIsolated = CreateWindowW(L"BUTTON",
-            L"Aislar token fuera del Administrador de Credenciales de Windows (SSH_CONNECTION=1)",
+            S->chkIsolated,
             WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
             34, 368, 530, 24, hWnd, (HMENU)ID_CHK_ISOLATED, NULL, NULL);
 
         g_hChkSkipWizard = CreateWindowW(L"BUTTON",
-            L"Omitir asistente de instalación del IDE al abrir (ide-install-wizard-shown)",
+            S->chkSkipWizard,
             WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
             34, 396, 530, 24, hWnd, (HMENU)ID_CHK_SKIP_WIZARD, NULL, NULL);
 
         g_hChkShortcut = CreateWindowW(L"BUTTON",
-            L"Crear / actualizar acceso directo en el Escritorio (Antigravity - <Nombre>.lnk)",
+            S->chkShortcut,
             WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
             34, 424, 530, 24, hWnd, (HMENU)ID_CHK_SHORTCUT, NULL, NULL);
 
-        g_hBtnSave = CreateWindowW(L"BUTTON", L"Guardar Configuración", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+        g_hBtnSave = CreateWindowW(L"BUTTON", S->btnSave, WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
             565, 412, 175, 42, hWnd, (HMENU)ID_BTN_SAVE, NULL, NULL);
 
-        g_hStatus = CreateWindowExW(0, STATUSCLASSNAMEW, L"Listo.",
+        g_hStatus = CreateWindowExW(0, STATUSCLASSNAMEW, S->statusReady,
             WS_CHILD | WS_VISIBLE | SBARS_SIZEGRIP,
             0, 0, 0, 0, hWnd, NULL, NULL, NULL);
 
@@ -896,10 +1081,10 @@ static void InitSystemPaths(void) {
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow) {
     (void)hPrevInstance;
-    (void)lpCmdLine;
 
     CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
     InitCommonControls();
+    DetectUiLanguage(lpCmdLine);
     InitSystemPaths();
 
     WNDCLASSEXW wc = { sizeof(wc) };
@@ -926,7 +1111,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
     g_hWndMain = CreateWindowExW(
         0,
         wc.lpszClassName,
-        L"AntigravityMA - Multi-Account & Profile Manager",
+        S->windowTitle,
         WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX,
         (screenW - width) / 2,
         (screenH - height) / 2,
